@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.Toolbar
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="#946CDD"
+    android:id="@+id/main_app_bar"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/arapey"
+        android:paddingLeft="20dp"
+        android:textStyle="bold"
+        android:text="CareMee"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+
+
+</androidx.appcompat.widget.Toolbar>

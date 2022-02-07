@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable-v24/floating_plate.xml" value="0.22870370370370371" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable-v24/loginmail.xml" value="0.22870370370370371" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable-v24/loginpassword.xml" value="0.22870370370370371" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/address.xml" value="0.14629629629629629" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/adminlogindesign.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/background.xml" value="0.12604166666666666" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/button.xml" value="0.19" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/button_gradient.xml" value="0.13333333333333333" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/calendar.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/chat_layout.xml" value="0.13703703703703704" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/daiolog_shape.xml" value="0.16203703703703703" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/date.xml" value="0.16018518518518518" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/done.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/empty_bac.xml" value="0.16203703703703703" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/fileattach.xml" value="0.17685185185185184" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/head_background.xml" value="0.13703703703703704" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ic_bottom_welcome.xml" value="0.240625" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ic_illustration_login.xml" value="0.240625" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ic_illustration_welcome.xml" value="0.240625" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.16296296296296298" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ic_launcher_backgroundd.xml" value="0.240625" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.16296296296296298" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/input_background.xml" value="0.12604166666666666" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/ishape_item.xml" value="0.16296296296296298" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/layout_backgound.xml" value="0.13703703703703704" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/logout.xml" value="0.13703703703703704" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/menu.xml" value="0.12760416666666666" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/message_background.xml" value="0.16018518518518518" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/message_background_reciver.xml" value="0.16018518518518518" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/message_background_send.xml" value="0.17037037037037037" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/password.xml" value="0.240625" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/pay.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/phone.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/progressbar_background.xml" value="0.14814814814814814" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/send.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/settings.xml" value="0.18055555555555555" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/username.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/verified_user.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/drawable/verify.xml" value="0.1638888888888889" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/font/almendra_sc.xml" value="0.14629629629629629" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/font/arapey.xml" value="0.14629629629629629" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/font/cormorant_garamond_light.xml" value="0.14351851851851852" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_admin_chat_box.xml" value="0.14" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_admin_login.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_admin_reg.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_admin_user_detail.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_ask_doctor_patient.xml" value="0.18" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_chat_detailed.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_dashboard.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_edit_admin_profile.xml" value="0.15307971014492755" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_home.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_imageview.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_otp.xml" value="0.18" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_profilesettings.xml" value="0.15" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_razorpay.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_register.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_settings.xml" value="0.2" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_splashscreen.xml" value="0.12" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_user_chat_box.xml" value="0.1" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_user_login.xml" value="0.22" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_user_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_user_registration.xml" value="0.20185185185185187" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_userdetail.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_verify_otp.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_welcome.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/activity_welcome_page.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/app_bar_layout.xml" value="0.15" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/fragment_calls.xml" value="0.10989583333333333" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/fragment_chats.xml" value="0.1" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/fragment_oppointment.xml" value="0.14" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/fragment_status.xml" value="0.22447916666666667" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/item_user_row.xml" value="0.14" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/logoutdailog_layout.xml" value="0.16" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/reciver_layout_item.xml" value="0.22" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/sample_show_user.xml" value="0.25" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/layout/sender_layout_item.xml" value="0.16" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/menu/menu.xml" value="0.16" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12604166666666666" />
+        <entry key="..\:/Chat Project/ChattingApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12604166666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

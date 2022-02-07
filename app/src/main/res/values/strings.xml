@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CareMee</string>
+    <string name="razorpay_key_id">rzp_live_RkfIQ3wjla80mC</string>
+    <string name="razorpay_secret_key">IkSO18ffgejHCbYBAYy8r90v</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abril_fatface</item>
+        <item>@font/amiri</item>
+        <item>@font/arapey</item>
+        <item>@font/average</item>
+        <item>@font/carme</item>
+        <item>@font/eb_garamond</item>
+        <item>@font/kalam</item>
+    </array>
+</resources>

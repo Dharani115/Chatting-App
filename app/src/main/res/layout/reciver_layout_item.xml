@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/g"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="left"
+    android:layout_margin="3dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginRight="7dp"
+    android:maxWidth="310dp"
+    android:maxHeight="400dp"
+    android:minHeight="30dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:background="@drawable/message_background_reciver"
+        android:maxWidth="310dp"
+        android:maxHeight="400dp"
+        android:minHeight="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:maxWidth="270dp"
+            android:minWidth="50dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
+            android:text="CareMee"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/receiverTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/pdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:maxWidth="270dp"
+            android:minWidth="50dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:text="Click here to Download Pdf"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/senderTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:layout_constraintVertical_bias="0.545" />
+
+        <com.joooonho.SelectableRoundedImageView
+            android:layout_width="wrap_content"
+            android:maxWidth="300dp"
+            android:maxHeight="300dp"
+            android:layout_height="wrap_content"
+            app:sriv_right_top_corner_radius="16dip"
+            app:sriv_left_top_corner_radius="2dip"
+            app:sriv_left_bottom_corner_radius="2dip"
+            app:sriv_right_bottom_corner_radius="2dip"
+            android:layout_marginBottom="10dp"
+            android:padding="0dp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:id="@+id/images"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5sp"
+            android:layout_marginBottom="5sp"
+            android:hint="12:00am"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_seen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/g"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:text="seen"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+
+</LinearLayout>
