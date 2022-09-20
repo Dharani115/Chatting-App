@@ -95,7 +95,9 @@ public class UserMainActivity extends AppCompatActivity {
         finish();
     }
     private void status(String status){
-        reference = FirebaseDatabase.getInstance().getReference("users").child(fuser.getUid());
+        Intent intent=getIntent();
+        String uid = intent.getStringExtra("uid");
+        reference = FirebaseDatabase.getInstance().getReference("users").child(uid);
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("status", status);
 

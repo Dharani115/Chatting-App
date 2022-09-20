@@ -123,7 +123,7 @@ public class AdminMessageActivity extends AppCompatActivity {
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminMessageActivity.this,MainActivity.class));
+                startActivity(new Intent(AdminMessageActivity.this,Admin_ChatBox.class));
             finish();
             }
         });

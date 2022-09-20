@@ -6,6 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.chattingapp.Models.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -46,34 +47,44 @@ public class SplashScreen extends AppCompatActivity {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if (dataSnapshot.getValue() != null) {
+                                    Users users = dataSnapshot.getValue(Users.class);
+                                    if (users != null) {
+                                        String custype= users.getType();
+                                    }
                                     String email = null;
                                     if (user != null) {
                                         email = user.getUid();
-
+//                                        Query dtype=userRef.orderByChild("type").equalTo(type);
                                         String id = "4oCgArfvMSdxzxqGmjLZqXhR9Dh2";
+                                        String type= "Doctor";
 
                                         if (fAuth.getCurrentUser() != null) {
                                             if (email.equals(id)) {
-                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                                startActivity(new Intent(getApplicationContext(), Admin_ChatBox.class));
                                                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
                                                 finish();
                                             } else {
-                                                startActivity(new Intent(getApplicationContext(), UserMainActivity.class));
+                                                startActivity(new Intent(getApplicationContext(), User_ChatBox.class));
                                                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                                                 finish();
                                             }
                                         } else {
-                                            startActivity(new Intent(getApplicationContext(), OTPActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), Welcome.class));
                                             overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                                             finish();
                                         }
                                     } else {
-                                        startActivity(new Intent(getApplicationContext(), OTPActivity.class));
+                                        startActivity(new Intent(getApplicationContext(), Welcome.class));
                                         overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                                         finish();
                                     }
 
+                                }
+                                else {
+                                    startActivity(new Intent(getApplicationContext(), Welcome.class));
+                                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                                    finish();
                                 }
                             }
 

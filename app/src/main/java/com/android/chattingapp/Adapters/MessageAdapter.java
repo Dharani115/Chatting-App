@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +21,12 @@ import com.android.chattingapp.Models.Users;
 import com.android.chattingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -75,8 +81,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     }
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
-
+        FirebaseAuth fauth=FirebaseAuth.getInstance();
         Chat chat = mChat.get(position);
+        Long timedelete= chat.getTimestamp();
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -86,10 +93,36 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                         .setPositiveButton("yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                FirebaseDatabase database=FirebaseDatabase.getInstance();
-                                String senderRoom=FirebaseAuth.getInstance().getUid();
-                                database.getReference().child("chats").child(senderRoom)
-                                        .setValue(null);
+                                DatabaseReference database=FirebaseDatabase.getInstance().getReference("chats");
+                                Query query=database.orderByChild("timestamp").equalTo(timedelete);
+//                                String sq= String.valueOf(query);
+                                database.addValueEventListener( new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for (DataSnapshot ds:snapshot.getChildren()){
+                                            Chat chat = ds.getValue(Chat.class);
+                                            if(chat.getTimestamp().equals(timedelete)) {
+//                                                ds.getRef().removeValue();
+
+
+                                                if (ds.child("sender").getValue().equals( fauth.getUid())){
+                                                    ds.getRef().removeValue();
+                                                }
+                                                else{
+                                                    Toast.makeText(mContext,"You Can't delete",Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+//                                String time=FirebaseAuth.getInstance().getUid();
+//                                database.getReference().child("chats").child(senderRoom)
+//                                        .setValue(null);
 
 
                             }

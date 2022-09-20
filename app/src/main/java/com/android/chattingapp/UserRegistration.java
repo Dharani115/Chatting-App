@@ -257,6 +257,8 @@ public class UserRegistration extends AppCompatActivity {
         Intent intent = getIntent();
         String uid = intent.getStringExtra("uid");
         String mobile = intent.getStringExtra("phone");
+        String payid = intent.getStringExtra("payid");
+        String paystatus = intent.getStringExtra("paystatus");
 
         DatabaseReference reference = database.getReference().child("users").child(uid);
         StorageReference storageReference = storage.getReference().child("upload").child(uid);
@@ -279,19 +281,21 @@ public class UserRegistration extends AppCompatActivity {
                                 imageUri = uri.toString();
                                 Intent intent = getIntent();
                                 String uid = intent.getStringExtra("uid");
+                                String payid = intent.getStringExtra("payid");
+                                String paystatus = intent.getStringExtra("paystatus");
                                 String lastmessage = null;
                                 Long time = new Date().getTime();
                                 String timestamp=time.toString();
                                 String password= String.valueOf(Math.random());
                                 String type="Patients";
 
-                                Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,imageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type);
+                                Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,imageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type,payid,paystatus);
                                 reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             progressDialog.dismiss();
-                                            Intent i = new Intent(UserRegistration.this, UserMainActivity.class);
+                                            Intent i = new Intent(UserRegistration.this, User_ChatBox.class);
                                             i.putExtra("phone", mobile);
                                             i.putExtra("uid",uid);
                                             Log.d(TAG, "phone" + mobile);
@@ -316,7 +320,7 @@ public class UserRegistration extends AppCompatActivity {
             String password= String.valueOf(Math.random());
             String type="Patients";
 
-            Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,imageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type);
+            Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,imageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type,payid,paystatus);
             reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {

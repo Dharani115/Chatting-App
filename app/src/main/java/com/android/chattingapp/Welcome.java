@@ -44,20 +44,21 @@ public class Welcome extends AppCompatActivity {
 
                                 if (fAuth.getCurrentUser() != null) {
                                     if (email.equals(id)) {
-                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                        startActivity(new Intent(getApplicationContext(), Admin_ChatBox.class));
                                         finish();
                                     } else {
-                                        startActivity(new Intent(getApplicationContext(), UserMainActivity.class));
+                                        startActivity(new Intent(getApplicationContext(), User_ChatBox.class));
                                         finish();
                                     }
                                 } else {
-                                    startActivity(new Intent(getApplicationContext(), UserMainActivity.class));
+                                    startActivity(new Intent(getApplicationContext(), User_ChatBox.class));
                                     finish();
                                 }
-                            } else {
-                                startActivity(new Intent(getApplicationContext(), OTPActivity.class));
-                                finish();
                             }
+//                            else {
+//                                startActivity(new Intent(getApplicationContext(), we.class));
+//                                finish();
+//                            }
 
                         }
                     }

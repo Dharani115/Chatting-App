@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -154,63 +155,50 @@ public class regis extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    progressDialog.dismiss();
-                    Toast.makeText(regis.this,"Success",Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "createUserWithEmail:success");
+                    FirebaseUser user = mAuth.getCurrentUser();
 
-//                    sendEmailVerification();
-//                    OnAuth(task.getResult().getUser());
+                    try {
+                        if (user != null)
+                            user.sendEmailVerification()
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Log.d(TAG, "Email sent.");
 
+                                                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                                                        regis.this);
 
-//                    String id="JB2Fqo499ueK9fJQkqOP3pJdqVC3";
-//                        progressDialog.dismiss();
-//                        String uid=mAuth.getUid();
-//
-//                        if (mAuth.getUid().equals(id)) {
-//
-//                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users");
-//                    userRef.orderByChild("type").equalTo("Doctor")
-//                            .addListenerForSingleValueEvent(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot) {
-//                                    if (dataSnapshot.getValue() != null) {
-//                                        startActivity(new Intent(getApplicationContext(), Admin_ChatBox.class));
-//                                        finish();
-//                                    }
-////                                            else if(dataSnapshot.getValue() != null){
-////                                                DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users");
-////                                                userRef.orderByChild("uid").equalTo("7yBNOdB4qcS3eNjoWaQUSy7XOaQ2").addListenerForSingleValueEvent(new ValueEventListener() {
-////                                                    @Override
-////                                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-////                                                        if (snapshot.getValue() != null) {
-////                                                            startActivity(new Intent(getApplicationContext(), Admin_ChatBox.class));
-////                                                            finish();
-////                                                        }
-////                                                    }
-////
-////                                                    @Override
-////                                                    public void onCancelled(@NonNull DatabaseError error) {
-////
-////                                                    }
-////                                                });
-////                                            }
-//                                    else{
-//                                        Toast.makeText(regis.this,"Please Login as Patient ",Toast.LENGTH_SHORT).show();
-//
-//                                    }
-//                                }
-//
-//                                private void OpenErrorAlrt(String mobile_number_already_registed) {
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//                                }
-//
-//                            });
+                                                // set title
+                                                alertDialogBuilder.setTitle("Please Verify Your EmailID");
+
+                                                // set dialog message
+                                                alertDialogBuilder
+                                                        .setMessage("A verification Email Is Sent To Your Registered EmailID, please click on the link and Sign in again!")
+                                                        .setCancelable(false)
+                                                        .setPositiveButton("Sign In", new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int id) {
+
+                                                                Intent signInIntent = new Intent(regis.this, Welcome.class);
+                                                                regis.this.finish();
+                                                            }
+                                                        });
+
+                                                // create alert dialog
+                                                AlertDialog alertDialog = alertDialogBuilder.create();
+
+                                                // show it
+                                                alertDialog.show();
 
 
-//                        }
+                                            }
+                                        }
+                                    });
 
+                    } catch (Exception e) {
+                        Toast.makeText(regis.this,"error",Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     progressDialog.dismiss();
                     Toast.makeText(regis.this,"You are Not a Doctor",Toast.LENGTH_SHORT).show();

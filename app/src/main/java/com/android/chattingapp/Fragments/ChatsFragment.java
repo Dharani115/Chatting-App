@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -29,6 +30,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 
 public class ChatsFragment extends Fragment {
 
@@ -208,5 +210,26 @@ public class ChatsFragment extends Fragment {
             return chat.getTimestamp().compareTo(t1.getTimestamp());
         }
 
+    }
+    private void status(String status){
+        FirebaseUser auth= FirebaseAuth.getInstance().getCurrentUser();
+        String myid= auth.getUid();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(auth.getUid());
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("status", status);
+
+        reference.updateChildren(hashMap);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        status("online");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        status("offline");
     }
 }

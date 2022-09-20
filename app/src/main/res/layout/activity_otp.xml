@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,9 +9,9 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="80dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/caremee"/>
+        android:layout_marginTop="80dp"
+        android:src="@drawable/caremee" />
 
     <!--Edittext for getting users phone number-->
     <EditText
@@ -32,16 +31,16 @@
         android:id="@+id/idBtnGetOtp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_gradient"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
         android:layout_gravity="center_horizontal"
-        android:textSize="15dp"
-        android:textColor="#fff"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_gradient"
         android:text="Get OTP"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="15dp" />
 
 
     <EditText
@@ -50,8 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idBtnGetOtp"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
         android:hint="Enter OTP"
         android:importantForAutofill="no"
         android:inputType="phone" />
@@ -59,70 +58,86 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
-        <Button
-            android:id="@+id/payment"
-            android:onClick="payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_gradient"
-            android:textColor="#fff"
-            android:drawableStart="@drawable/pay"
-            android:drawablePadding="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:paddingLeft="45dp"
-            android:paddingRight="45dp"
-            android:textSize="15dp"
-            android:layout_gravity="center_horizontal"
-            android:text="Pay"
-            android:textAllCaps="false" />
 
-        <!--button for verifying user OTP-->
+<!--        <Button-->
+<!--            android:id="@+id/payment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@drawable/button_gradient"-->
+<!--            android:drawableStart="@drawable/pay"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:text="Pay"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textSize="15dp" />-->
         <Button
             android:id="@+id/idBtnVerify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/idEdtOtp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/button_gradient"
-            android:textColor="#fff"
             android:paddingLeft="45dp"
             android:paddingRight="45dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_gravity="center"
-            android:textSize="15dp"
             android:text="Login"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+        <!--button for verifying user OTP-->
 
     </LinearLayout>
 
+<!--    <Button-->
+<!--        android:id="@+id/idBtnVerify"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/idEdtOtp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/button_gradient"-->
+<!--        android:paddingLeft="45dp"-->
+<!--        android:paddingRight="45dp"-->
+<!--        android:text="Login"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#fff"-->
+<!--        android:textSize="15dp" />-->
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:outlineAmbientShadowColor="#7935C5"
-        android:indeterminate="true"
-        android:indeterminateTint="#7935C5"
-        android:layout_centerVertical="true"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:tooltipText="Please Wait"
+        android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-180dp"
-        android:visibility="invisible"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/paystatus"
-        android:layout_marginTop="150dp"
-        android:hint="payment"/>
+        android:indeterminate="true"
+        android:indeterminateTint="#7935C5"
+        android:outlineAmbientShadowColor="#7935C5"
+        android:tooltipText="Please Wait"
+        android:visibility="invisible" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/paystatus"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="150dp"-->
+<!--        android:hint="payment" />-->
 
 </LinearLayout>

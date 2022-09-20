@@ -224,7 +224,18 @@ public class UserPatientAdapter extends RecyclerView.Adapter<UserPatientAdapter.
                             theLastMessage = chat.getMessage();
                             msgcount = chat.isIsseen();
 
+                            if(chat.getType().equals("image")){
 
+
+                                theLastMessage= "Sent a Photo";
+
+
+                            }
+                            else{
+                                theLastMessage = chat.getMessage();
+
+
+                            }
                         }
                     }
                 }

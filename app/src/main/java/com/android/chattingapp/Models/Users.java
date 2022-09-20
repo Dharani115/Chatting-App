@@ -19,13 +19,15 @@ public class Users {
      String timestamp;
      String password;
      String type;
+     String payid;
+     String paystatus;
 
     public Users() {
     }
 
 
 
-    public Users(String uid, String address, String age,String bloodgroup, String dob, String email, String gender, String imageUri,String localaddress,String localpin,String name, String phone,String pin, String status, String timestamp,String password,String type) {
+    public Users(String uid, String address, String age,String bloodgroup, String dob, String email, String gender, String imageUri,String localaddress,String localpin,String name, String phone,String pin, String status, String timestamp,String password,String type, String payid,String paystatus) {
         this.uid = uid;
         this.address = address;
         this.age = age;
@@ -44,6 +46,8 @@ public class Users {
         this.timestamp = timestamp;
         this.password = password;
         this.type = type;
+        this.payid = payid;
+        this.paystatus = paystatus;
 
 
 
@@ -191,5 +195,21 @@ public class Users {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getPayid() {
+        return payid;
+    }
+
+    public void setPayid(String payid) {
+        this.payid = payid;
+    }
+
+    public String getPaystatus() {
+        return paystatus;
+    }
+
+    public void setPaystatus(String paystatus) {
+        this.paystatus = paystatus;
     }
 }

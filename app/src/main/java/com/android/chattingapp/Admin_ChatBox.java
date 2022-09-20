@@ -91,6 +91,7 @@ public class Admin_ChatBox extends AppCompatActivity {
         doubleBackToExitPressedOnce=true;
     }
     private void status(String status){
+        String myid= auth.getUid();
         reference = FirebaseDatabase.getInstance().getReference("users").child(auth.getUid());
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("status", status);
@@ -99,14 +100,14 @@ public class Admin_ChatBox extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         status("online");
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         status("offline");
     }
 }

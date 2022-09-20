@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,15 +29,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.razorpay.Checkout;
 import com.razorpay.Order;
-import com.razorpay.PaymentResultListener;
 import com.razorpay.RazorpayClient;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.concurrent.TimeUnit;
 
-public class OTPActivity extends AppCompatActivity implements PaymentResultListener {
+public class OTPActivity extends AppCompatActivity {
 
     // variable for FirebaseAuth class
     private FirebaseAuth mAuth;
@@ -65,6 +60,7 @@ public class OTPActivity extends AppCompatActivity implements PaymentResultListe
     Order order;
     String email, password;
     TextView paystatus;
+    String paymentid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,45 +80,49 @@ public class OTPActivity extends AppCompatActivity implements PaymentResultListe
         verifyOTPBtn = findViewById(R.id.idBtnVerify);
         generateOTPBtn = findViewById(R.id.idBtnGetOtp);
         progressBar = findViewById(R.id.progressBar);
-        paystatus = findViewById(R.id.paystatus);
+//        paystatus = findViewById(R.id.paystatus);
 
-        Button pay=findViewById(R.id.payment);
+//        Button pay=findViewById(R.id.payment);
+//        verifyOTPBtn.setVisibility(View.GONE);
+//        Checkout.preload(getApplicationContext());
 
-        pay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        Intent intent = getIntent();
+//        String payid = intent.getStringExtra("payid");
+//        String paystat = intent.getStringExtra("paystatus");
+//        paystatus.setText(paystat);
+////        paystatus.append(paystat);
+//        pay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                startActivity(new Intent(getApplicationContext(), RazorpayActivity.class));
+//                finish();
+//                Checkout checkout=new Checkout();
+//                checkout.setKeyID("rzp_live_RkfIQ3wjla80mC");
+//
+//                checkout.setImage(R.drawable.caremee);
+//
+//                JSONObject object = new JSONObject();
+//                try {
+//                    object.put("name","CareMee");
+//                    object.put("description","Consultation charges");
+//                    object.put("theme.color","#0093DD");
+//                    object.put("currency","INR");
+//                    object.put("Amount",100);
+//                    checkout.open( OTPActivity.this,object);
+//                } catch (JSONException e) {
+//                    Log.e("TAG", "Error in starting Rozorpay Checkout",e);
+//
+//                }
+//            }
+//        });
 
-                Checkout.preload(getApplicationContext());
 
-                String sAmount="30";
-                int amount=Math.round(Float.parseFloat(sAmount)*30);
-                Checkout checkout=new Checkout();
-                checkout.setKeyID("rzp_live_fbBTDpCUjMPiho");
-                checkout.setImage(R.drawable.caremee);
-
-                JSONObject object = new JSONObject();
-                try {
-                    object.put("name","CareMee");
-                    object.put("description","Consultation charges");
-                    object.put("theme.color","#0093DD");
-                    object.put("currency","INR");
-                    object.put("Amount",amount);
-//                    object.put("prefill.contact","9483813046");
-//                    object.put("prefill.email","pradeepg18200@gmail.com");
-                    checkout.open( OTPActivity.this,object);
-                } catch (JSONException e) {
-                    Log.e("TAG", "Error in starting Rozorpay Checkout",e);
-                }
-            }
-        });
-
-//        register
-
-        // setting onclick listener for generate OTP button.
         generateOTPBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     progressDialog.show();
+//                verifyOTPBtn.setVisibility(View.GONE);
 
                     // below line is for checking weather the user
                     // has entered his mobile number or not.
@@ -206,13 +206,11 @@ public class OTPActivity extends AppCompatActivity implements PaymentResultListe
                                         }
 
                                 });
-
-
                             }
                             else if(task.isSuccessful()) {
                                 String stat="success";
                                 DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users");
-                                userRef.orderByChild("phone").equalTo(edtPhone.getText().toString()&&userRef.orderByChild("paymentstatus").equalTo(stat))
+                                userRef.orderByChild("phone").equalTo(edtPhone.getText().toString())
                                         .addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -221,7 +219,7 @@ public class OTPActivity extends AppCompatActivity implements PaymentResultListe
                                                     finish();
                                                 } else {
                                                     String mobile = edtPhone.getText().toString();
-                                                    Intent i = new Intent(OTPActivity.this, UserRegistration.class);
+                                                    Intent i = new Intent(OTPActivity.this, RazorpayActivity.class);
                                                     i.putExtra("phone", mobile);
                                                     i.putExtra("uid", mAuth.getUid());
 //                                                    Log.d(TAG, "phone" + mobile);
@@ -325,6 +323,7 @@ public class OTPActivity extends AppCompatActivity implements PaymentResultListe
         @Override
         public void onVerificationFailed(FirebaseException e) {
             progressDialog.dismiss();
+//            verifyOTPBtn.setVisibility(View.GONE);
 
             // displaying error message with firebase exception.
             Toast.makeText(OTPActivity.this, "Please Check Your internet connection and Try Again", Toast.LENGTH_LONG).show();
@@ -343,16 +342,6 @@ public class OTPActivity extends AppCompatActivity implements PaymentResultListe
         // after getting credential we are
         // calling sign in method.
         signInWithCredential(credential);
-    }
-    @Override
-    public void onPaymentSuccess(String s)
-    {
-        paystatus.setText("Successful payment ID :"+s);
-    }
-
-    @Override
-    public void onPaymentError(int i, String s) {
-        paystatus.setText("Failed and cause is :"+s);
     }
 
 }

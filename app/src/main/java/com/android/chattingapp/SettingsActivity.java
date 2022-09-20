@@ -51,7 +51,7 @@ public class SettingsActivity extends AppCompatActivity {
     private RadioButton radioSexButton;
     String dob;
     String gender;
-    String status;
+    String status,payid,paystatus;
     String lastmessage;
     ProgressDialog progressDialog;
 
@@ -122,6 +122,8 @@ public class SettingsActivity extends AppCompatActivity {
                 String age=snapshot.child("age").getValue().toString();
                 String bloodgroup=snapshot.child("bloodgroup").getValue().toString();
                 status=snapshot.child("status").getValue().toString();
+                payid=snapshot.child("payid").getValue().toString();
+                paystatus=snapshot.child("paystatus").getValue().toString();
                 String image=snapshot.child("imageUri").getValue().toString();
                 gender=snapshot.child("gender").getValue().toString();
                 dob=snapshot.child("dob").getValue().toString();
@@ -184,7 +186,7 @@ public class SettingsActivity extends AppCompatActivity {
                                         public void onSuccess(Uri uri) {
                                             progressDialog.dismiss();
                                             String finalImageUri=uri.toString();
-                                            Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,finalImageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type);
+                                            Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,finalImageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type,payid,paystatus);
 
 
                                             reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -216,7 +218,7 @@ public class SettingsActivity extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
                             progressDialog.dismiss();
                             String finalImageUri=uri.toString();
-                            Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,finalImageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type);
+                            Users users = new Users(uid,address,age,bloodgroup,dob,email,gender,finalImageUri,localaddress,localpin,name,phone,pin,status,timestamp,password,type,payid,paystatus);
 
 
                             reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {

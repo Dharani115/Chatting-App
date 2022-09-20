@@ -47,7 +47,6 @@ public class User_ChatBox extends AppCompatActivity {
             }
         });
 
-
         binding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,14 +98,14 @@ public class User_ChatBox extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         status("online");
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         status("offline");
     }
 }

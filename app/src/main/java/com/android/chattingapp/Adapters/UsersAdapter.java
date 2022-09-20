@@ -281,68 +281,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
             }
         });
     }
-//    private void sortUsers() {
-//
-//        Collections.sort(mChats, new ChatTimeComparator());
-//
-//        if(mChats.size() > 0 && list.size() > 1){
-//            String lastUserRId = mChats.get(0).getReceiver();
-//            String lastUserSId = mChats.get(0).getSender();
-//
-//            int i = 0, selId = 0;
-//            for(Users user: list){
-//                if(user.getUid().equals(lastUserRId) || user.getUid().equals(lastUserSId)){
-//                    selId = i;
-//                }
-//                i++;
-//            }
-//
-//            Users user = list.get(selId);
-//            List<Users> tempUsers = new ArrayList<>();
-//            list.remove(selId);
-//            tempUsers.addAll(list);
-//            list.clear();
-//            list.add(0, user);
-//            list.addAll(tempUsers);
-//            list.size();
-////            usersAdapter.notifyDataSetChanged();
-//        }
-//    }
-//    public class ChatTimeComparator implements Comparator<Chat>
-//    {
-//        public int compare(Chat left, Chat right) {
-//            return right.getTimestamp().compareTo(left.getTimestamp());
-//        }
-//    }
-
-
-
-
     @Override
     public int getItemCount() {
-
-//        Collections.sort(mChats, new ChatTimeComparator());
-//
-//        if (mChats.size() > 0 && list.size() > 1) {
-//            String lastUserRId = mChats.get(0).getReceiver();
-//            String lastUserSId = mChats.get(0).getSender();
-//
-//            int i = 0, selId = 0;
-//            for (Users user : list) {
-//                if (user.getUid().equals(lastUserRId) || user.getUid().equals(lastUserSId)) {
-//                    selId = i;
-//                }
-//                i++;
-//            }
-//
-//            Users user = list.get(selId);
-//            List<Users> tempUsers = new ArrayList<>();
-//            list.remove(selId);
-//            tempUsers.addAll(list);
-//            list.clear();
-//            list.add(0, user);
-//            list.addAll(tempUsers);
-//        }
         return list.size();
 
     }

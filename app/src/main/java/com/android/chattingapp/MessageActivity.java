@@ -121,7 +121,7 @@ public class MessageActivity extends AppCompatActivity {
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MessageActivity.this,UserMainActivity.class));
+                startActivity(new Intent(MessageActivity.this,User_ChatBox.class));
                 finish();
             }
         });
